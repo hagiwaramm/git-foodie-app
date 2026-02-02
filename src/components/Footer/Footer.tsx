@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footer__wrapper">
-        <a href="" className="me-icon">
+        <a href="#" className="me-icon">
           Jan Practice
         </a>
       </div>

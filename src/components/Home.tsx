@@ -2,7 +2,6 @@ import "./home.scss";
 import SearchBar from "./SearchBar/SearchBar";
 import iconNext from "./../img/icon-next.svg";
 import { useEffect, useState } from "react";
-import { getRestaurantData } from "../lib/getRestaurantData";
 import { useNavigate } from "react-router-dom";
 import { navigateToSearch } from "../lib/searchNavigation";
 import RestaurantCard from "./RestaurantCard";
@@ -11,14 +10,6 @@ import topImg1 from "../img/top-1.png";
 import topImg2 from "../img/top-2.png";
 import topImg3 from "../img/top-3.png";
 import { loadingSaved } from "../lib/savedRestaurant";
-
-interface SearchParams {
-  area: string;
-  station: string;
-  keyword: string; // "foo bar"
-  start: string; //取得件数の頭
-  count: string; //取得件総数
-}
 
 export default function Home() {
   const [savedData, setSavedData] = useState<RestaurantCardInfo[]>([]);
@@ -38,9 +29,9 @@ export default function Home() {
     <>
       <div className="home_top">
         <div className="home_img">
-          <img className="home_img-item" src={topImg1} alt="top image" />
-          <img className="home_img-item" src={topImg2} alt="top image" />
-          <img className="home_img-item" src={topImg3} alt="top image" />
+          <img className="home_img-item" src={topImg1} alt="top" />
+          <img className="home_img-item" src={topImg2} alt="top" />
+          <img className="home_img-item" src={topImg3} alt="top" />
         </div>
         <div className="search-bar_wrapper search-bar_wrapper--home">
           <SearchBar

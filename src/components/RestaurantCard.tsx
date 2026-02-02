@@ -1,7 +1,6 @@
 import "./restaurantCard.scss";
 import iconLocation from "./../img/icon-location.svg";
 import iconPrice from "./../img/icon-price.svg";
-
 import iconClose from "./../img/button-close.png";
 import { MouseEvent, useEffect, useRef, useState } from "react";
 import SavedButton from "./SavedButton";
@@ -109,7 +108,7 @@ export default function RestaurantCard({
     <div className="restaurant-card">
       <div className="dialog-btn--open" onClick={openDialog}>
         <div className="restaurant-card_img-wrapper">
-          <img src={imgUrl} alt="restaurant image" />
+          <img src={imgUrl} alt="restaurant" />
           <VisitedButton onClick={onClickVisited} visited={visited} />
         </div>
         <div className="restaurant-card_content">
@@ -156,7 +155,7 @@ export default function RestaurantCard({
 
         <div className="dialog-wrapper">
           <div className="dialog-img">
-            <img src={imgUrl} alt="restaurant image" />
+            <img src={imgUrl} alt="restaurant" />
           </div>
           <div className="dialog-content_wrapper">
             <div className="dialog-content">
@@ -210,6 +209,7 @@ export default function RestaurantCard({
                       <a
                         href={hotpepperUrl}
                         target="_blank"
+                        rel="noreferrer noopener"
                         style={{ color: "$main" }}
                       >
                         {hotpepperUrl}
