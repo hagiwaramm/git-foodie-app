@@ -1,5 +1,4 @@
 import "./visitedButton.scss";
-import { ReactElement, useState, useTransition } from "react";
 import iconNotVisited from "./../img/visited-disable.svg";
 import iconVisited from "./../img/visited-selected.svg";
 

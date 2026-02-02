@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
-interface InputKeywords {
+interface inputKeywordsProps {
   setSearchKeywords: Dispatch<SetStateAction<string>>;
 }
 
-export default function InputKeywords({ setSearchKeywords }: InputKeywords) {
+export default function InputKeywords({
+  setSearchKeywords,
+}: inputKeywordsProps) {
   return (
     <div className="input-words">
       <input

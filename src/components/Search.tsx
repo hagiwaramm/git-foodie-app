@@ -17,10 +17,8 @@ export default function Search() {
   const [canNext, setCanNext] = useState(true);
 
   const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  // params.toString();
+
   useEffect(() => {
-    // searchが変わったときだけ先頭に戻す
     setRestaurantStartNumber(1);
   }, [search]);
 
@@ -29,6 +27,7 @@ export default function Search() {
     setRestaurantStartNumber(1);
     (async () => {
       try {
+        const params = new URLSearchParams(search);
         params.set("start", String(restaurantStartNumber));
 
         const data = await getRestaurantData(params.toString());

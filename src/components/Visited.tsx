@@ -1,7 +1,6 @@
 import "./visited.scss";
 import { useEffect, useState } from "react";
 import { RestaurantCardInfo } from "../types/types";
-import { useNavigate } from "react-router-dom";
 import { loadingVisited } from "../lib/visitedRestaurant";
 import RestaurantCard from "./RestaurantCard";
 

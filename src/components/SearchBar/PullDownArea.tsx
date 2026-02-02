@@ -14,7 +14,7 @@ export default function PullDownArea({ setSearchArea }: PullDownAreaProps) {
         <select
           name="area"
           id="area"
-          className={areaSelected == false ? "notSelected" : "isSelected"}
+          className={areaSelected === false ? "notSelected" : "isSelected"}
           onChange={(e) => {
             setAreaSelected(true);
             setSearchArea(e.target.value);

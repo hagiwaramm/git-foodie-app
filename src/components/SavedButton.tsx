@@ -1,7 +1,6 @@
 import "./savedButton.scss";
 import iconSaved from "./../img/saved-selected.svg";
 import iconNotSaved from "./../img/save-disable.svg";
-import { useState } from "react";
 
 interface onClickSavedProps {
   saved: boolean;
