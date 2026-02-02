@@ -1,0 +1,22 @@
+@import "./../../App.scss";
+
+.header {
+  background-color: $main;
+  &__wrapper {
+    width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    margin: 0 auto;
+  }
+  .app-icon__btn {
+    @include header1_pc;
+    color: $white;
+  }
+  .list-icon__btn {
+    @include text-1;
+    color: $white;
+    margin-left: 85px;
+  }
+}

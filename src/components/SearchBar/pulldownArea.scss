@@ -1,0 +1,17 @@
+@import "./../../App.scss";
+
+.pulldown-area {
+  select {
+    @include text-1;
+    padding: 8px 20px;
+    border-radius: 30px;
+  }
+  .notSelected {
+    color: $gray;
+    border: 1px solid $light-gray;
+  }
+  .isSelected {
+    color: $black;
+    border: 2px solid $black;
+  }
+}

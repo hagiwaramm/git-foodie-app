@@ -1,0 +1,10 @@
+@import "./../../App.scss";
+
+.buttonSearch {
+  @include text-1;
+  border-radius: 3px;
+  padding: 8px 10px;
+  color: $white;
+  background-color: $main;
+  border: none;
+}

@@ -1,0 +1,17 @@
+@import "./../../App.scss";
+
+.footer {
+  background-color: $main;
+  &__wrapper {
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 auto;
+    .me-icon {
+      @include text-2;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,208 @@
+@import "./../App.scss";
+
+.restaurant-card {
+  width: 255px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  color: $gray;
+  overflow: hidden;
+  text-align: left;
+  &_img-wrapper {
+    position: relative;
+    height: 50%;
+    .visited-button_wrapper {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+  &_content {
+    padding: 10px;
+    text-align: left;
+    .restaurant-card_title {
+      @include text-1;
+      display: block;
+      color: $black;
+      margin-bottom: 4px;
+    }
+    .restaurant-card_info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      .restaurant-card_text {
+        @include text-4;
+      }
+    }
+    .restaurant-card_description {
+      @include text-3;
+      margin: 0 0 7px 0;
+      color: $black;
+    }
+    .restaurant-card_footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .restaurant-card_genre {
+        @include text-4;
+        padding: 5px 8px;
+        border-radius: 3px;
+        color: $white;
+        background-color: $gray;
+      }
+    }
+  }
+  .dialog-btn--open {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+  .restaurant-card_btn {
+    @include text-3;
+    padding: 0;
+    border: none;
+    line-height: 0;
+    background-color: transparent;
+  }
+
+  .dialog {
+    display: flex; // ★追加
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    .dialog-content_btn-wrapper {
+      display: flex;
+      justify-content: end;
+      top: 0;
+      right: 0;
+      .restaurant-card_btn--not-visited {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        gap: 10px;
+        outline: none;
+        border: none;
+        span {
+          @include text-2;
+          color: $main;
+        }
+      }
+      .saved-button_wrapper {
+        display: flex;
+      }
+      .restaurant-card_btn--not-saved {
+        img {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+    &-wrapper {
+      display: flex;
+      overflow: hidden;
+      .dialog-img {
+        width: 50%;
+        padding: 0 3%;
+        img {
+          width: 100%;
+          height: auto; /* ← これが重要 */
+          display: block;
+        }
+      }
+      .dialog-content_wrapper {
+        width: 50%;
+        overflow: auto;
+        .dialog-content {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .content--top {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+            .content_restaurant-name {
+              @include text-1;
+            }
+            .content_genre {
+              @include text-4;
+              padding: 5px 8px;
+              border-radius: 3px;
+              color: $white;
+              background-color: $gray;
+              margin: 0 10px 0 6px;
+            }
+            .content_budget {
+              @include text-3;
+            }
+            .content_description {
+              @include text-2;
+              color: $gray;
+            }
+          }
+          hr {
+            margin: 0;
+            border-width: 1px 0px 0px 0px;
+            border-style: solid;
+            border-color: $light-gray;
+            height: 1px;
+          }
+          .dialog-info {
+            &_title {
+              @include text-2;
+              margin-bottom: 30px;
+            }
+            table {
+              th {
+                @include text-3;
+                width: 108px;
+                height: 21px;
+                padding: 8px 0;
+                color: $gray;
+                border-right: $light-gray solid 1px;
+              }
+              td {
+                @include text-3;
+                padding-left: 10px;
+                .google-map_wrapper {
+                  width: 100%;
+                  height: 100px;
+                  overflow: "hidden";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .dialog-buttons {
+      align-self: flex-end; // 右寄せ
+      padding: 12px;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+    .dialog-buttons--top {
+      padding: 0;
+      position: sticky;
+      top: 0;
+    }
+    .dialog-buttons--bottom {
+      padding: 0;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .dialog-btn--close {
+      @include text-3;
+      display: flex;
+      right: 0;
+      bottom: 0;
+      align-items: center;
+      gap: 5px;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}

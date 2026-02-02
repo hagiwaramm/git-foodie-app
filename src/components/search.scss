@@ -1,0 +1,35 @@
+@import "./../App.scss";
+
+.search-content {
+  width: 90%;
+  margin: 0 auto 50px;
+  .search-bar {
+    margin: 24px auto;
+    justify-content: center;
+  }
+  .search-content_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    gap: 10px;
+    .search-content_restaurant-card {
+      list-style: none;
+    }
+  }
+  .search-pagenation {
+    display: flex;
+    justify-content: center;
+    gap: 400px;
+    .pagenation-button {
+      padding: 5px 10px;
+      border-radius: 50px;
+      border: solid 1.5px $gray;
+      background-color: white;
+    }
+    .pagenation-button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}

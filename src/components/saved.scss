@@ -1,0 +1,23 @@
+@import "././../App.scss";
+.saved_header {
+  text-align: center;
+  width: 90%;
+  margin: 20px auto;
+  .saved_header-title {
+    @include text-1;
+  }
+}
+
+.content_list-wrapper {
+  width: 90%;
+  margin: 0px auto 50px;
+  .content_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 10px;
+    .content_restaurant-card {
+      list-style: none;
+    }
+  }
+}
