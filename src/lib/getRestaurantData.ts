@@ -16,7 +16,8 @@ export async function getRestaurantData(param: string) {
       throw new Error(`HTTPエラー: ${response.status}`);
     }
     console.log('レスポンスデータ' , response);
-    return await response.json();
+    // return await response.json();
+    return await JSON.parse(text);
   } catch (error) {
     console.error("Fetch失敗:", error);
     throw error;
