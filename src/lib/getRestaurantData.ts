@@ -7,6 +7,11 @@ export async function getRestaurantData(param: string) {
   
   try {
     const response = await fetch(url);
+    console.log("status", response.status);
+    console.log("content-type", response.headers.get("content-type"));
+    const text = await response.text();
+    console.log("body head", text.slice(0, 200));
+
     if (!response.ok) {
       throw new Error(`HTTPエラー: ${response.status}`);
     }
