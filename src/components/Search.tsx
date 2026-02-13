@@ -31,6 +31,7 @@ export default function Search() {
         params.set("start", String(restaurantStartNumber));
 
         const data = await getRestaurantData(params.toString());
+        console.log(data);
         setResults(data);
         setShopResults(data.results.shop ?? []);
       } catch (error) {

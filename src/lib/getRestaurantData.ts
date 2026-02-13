@@ -5,7 +5,6 @@ export async function getRestaurantData(param: string) {
   // 修正：ドメインの後に正しいパスを追加し、https:// を付ける
   const url = `/hotpepper/gourmet/v1/?key=${APIKEY}&format=json&${param}`;
 
-  console.log("修正後のURL:", url);
 
   try {
     const response = await fetch(url);
