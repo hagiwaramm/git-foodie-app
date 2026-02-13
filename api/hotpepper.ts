@@ -1,26 +1,28 @@
 // api/hotpepper.ts
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   try {
     const apiKey = process.env.HOTPEPPER_API_KEY;
     if (!apiKey) return res.status(500).json({ error: "HOTPEPPER_API_KEY is not set" });
 
-    const qs = new URLSearchParams(req.query as any);
-    qs.set("key", apiKey);
-    qs.set("format", "json");
+    const upstream = new URL("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/");
+    upstream.searchParams.set("key", apiKey);
+    upstream.searchParams.set("format", "json");
 
-    const url = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?${qs.toString()}`;
-    const r = await fetch(url);
+    for (const [k, v] of Object.entries(req.query)) {
+      if (k === "key" || k === "format") continue;
+      if (Array.isArray(v)) upstream.searchParams.set(k, v.join(","));
+      else if (v != null) upstream.searchParams.set(k, String(v));
+    }
+
+    const r = await fetch(upstream.toString());
     const text = await r.text();
 
-    console.log("query", req.query);
-console.log("proxy url", url);
-console.log("upstream status", r.status);
-console.log("upstream content-type", r.headers.get("content-type"));
     res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.status(r.status).send(text);
+    return res.status(r.status).send(text);
   } catch (e: any) {
-    res.status(500).json({ error: e?.message ?? "unknown error" });
+    console.error(e);
+    return res.status(500).json({ error: e?.message ?? "unknown error" });
   }
-}
+};
